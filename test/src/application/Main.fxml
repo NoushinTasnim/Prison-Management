@@ -10,9 +10,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #444444;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SignIn">
+<AnchorPane prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #444444;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SignIn">
    <children>
-      <ImageView fitHeight="85.0" fitWidth="105.0" layoutX="250.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="85.0" fitWidth="756.0" layoutX="250.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../prisoner.jpg" />
          </image>
@@ -30,15 +30,15 @@
          <font>
             <Font size="36.0" />
          </font></Label>
-      <PasswordField fx:id="password" cacheShape="false" layoutX="389.0" layoutY="379.0" prefHeight="4.0" prefWidth="466.0">
+      <PasswordField fx:id="password" cacheShape="false" layoutX="389.0" layoutY="379.0" prefHeight="77.0" prefWidth="466.0" style="-fx-background-radius: 100;">
          <font>
             <Font size="36.0" />
          </font></PasswordField>
-      <TextField fx:id="username" layoutX="389.0" layoutY="231.0" prefHeight="54.0" prefWidth="466.0">
+      <TextField fx:id="username" layoutX="389.0" layoutY="231.0" prefHeight="77.0" prefWidth="466.0" style="-fx-background-radius: 100;">
          <font>
             <Font size="36.0" />
          </font></TextField>
-      <Button fx:id="signIn" layoutX="404.0" layoutY="584.0" mnemonicParsing="false" onAction="#userSignIn" prefHeight="70.0" prefWidth="271.0" style="-fx-background-color: #ffffff;" text="Sign In">
+      <Button fx:id="signIn" layoutX="456.0" layoutY="581.0" mnemonicParsing="false" onAction="#userSignIn" prefHeight="70.0" prefWidth="271.0" style="-fx-background-radius: 100;" text="Sign In">
          <font>
             <Font size="36.0" />
          </font></Button>

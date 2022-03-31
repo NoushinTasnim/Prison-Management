@@ -6,11 +6,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Rapsheet">
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Rapsheet">
    <center>
       <AnchorPane prefHeight="720.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
          <children>
@@ -24,48 +25,55 @@
                   <Font name="Be Vietnam Regular" size="24.0" />
                </font>
             </Label>
-            <RadioButton layoutX="228.0" layoutY="207.0" mnemonicParsing="false" text="Yes">
+            <RadioButton layoutX="228.0" layoutY="207.0" mnemonicParsing="false" onAction="#prevCrimeDets" text="Yes">
                <font>
-                  <Font name="Be Vietnam Regular" size="18.0" />
+                  <Font size="24.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="ans" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton layoutX="584.0" layoutY="207.0" mnemonicParsing="false" text="No" toggleGroup="$ans">
+               <font>
+                  <Font size="24.0" />
                </font>
             </RadioButton>
-            <RadioButton layoutX="584.0" layoutY="207.0" mnemonicParsing="false" text="No">
+            <AnchorPane fx:id="prevRecs" layoutX="224.0" layoutY="260.0" prefHeight="333.0" prefWidth="623.0" visible="false">
+               <children>
+                  <TextField layoutX="161.0" layoutY="54.0" prefHeight="149.0" prefWidth="474.0" style="-fx-background-radius: 20;" />
+                  <Label layoutX="1.0" layoutY="266.0" text="Release Date">
+                     <font>
+                        <Font name="Be Vietnam Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="3.0" text="Crime ">
+                     <font>
+                        <Font name="Be Vietnam Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="54.0" text="Description">
+                     <font>
+                        <Font name="Be Vietnam Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="217.0" text="Entry Date">
+                     <font>
+                        <Font name="Be Vietnam Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="crimeType" layoutX="161.0" layoutY="3.0" prefHeight="38.0" prefWidth="182.0" style="-fx-background-radius: 100;" />
+                  <DatePicker editable="false" layoutX="161.0" layoutY="264.0" prefHeight="39.0" prefWidth="193.0" />
+                  <DatePicker editable="false" layoutX="161.0" layoutY="216.0" prefHeight="39.0" prefWidth="193.0" />
+               </children>
+            </AnchorPane>
+            <Button layoutX="340.0" layoutY="617.0" mnemonicParsing="false" onAction="#newConvict" prefHeight="51.0" prefWidth="131.0" style="-fx-background-radius: 100;" text="Prev">
                <font>
-                  <Font name="Be Vietnam Regular" size="18.0" />
-               </font>
-            </RadioButton>
-            <Label layoutX="228.0" layoutY="257.0" text="Crime " visible="false">
-               <font>
-                  <Font name="Be Vietnam Regular" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="228.0" layoutY="299.0" text="Description" visible="false">
-               <font>
-                  <Font name="Be Vietnam Regular" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="228.0" layoutY="491.0" text="Entry Date" visible="false">
-               <font>
-                  <Font name="Be Vietnam Regular" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="226.0" layoutY="544.0" text="Release Date" visible="false">
-               <font>
-                  <Font name="Be Vietnam Regular" size="24.0" />
-               </font>
-            </Label>
-            <ChoiceBox layoutX="403.0" layoutY="258.0" prefHeight="38.0" prefWidth="182.0" visible="false" />
-            <TextField layoutX="403.0" layoutY="307.0" prefHeight="178.0" prefWidth="416.0" visible="false" />
-            <DatePicker layoutX="403.0" layoutY="493.0" prefHeight="39.0" prefWidth="185.0" visible="false" />
-            <DatePicker layoutX="403.0" layoutY="545.0" prefHeight="39.0" prefWidth="185.0" visible="false" />
-            <Button layoutX="432.0" layoutY="633.0" mnemonicParsing="false" onAction="#newconvict" text="Prev">
-               <font>
-                  <Font name="Be Vietnam Medium" size="18.0" />
+                  <Font size="24.0" />
                </font>
             </Button>
-            <Button layoutX="616.0" layoutY="633.0" mnemonicParsing="false" onAction="#prisonerDetails" text="Next">
+            <Button layoutX="618.0" layoutY="617.0" mnemonicParsing="false" onAction="#prisonerDetails" prefHeight="51.0" prefWidth="132.0" style="-fx-background-radius: 100;" text="Next">
                <font>
-                  <Font name="Be Vietnam Medium" size="18.0" />
+                  <Font size="24.0" />
                </font>
             </Button>
          </children>
