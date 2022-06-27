@@ -26,8 +26,7 @@ public class JailorTable {
 		            	nt.setJailNm(rs.getString("Name"));
 		            	nt.setJailDb(rs.getString("Dob"));
 		                nt.setJailJoin(rs.getString("Joined"));
-		                nt.setJailLeft(rs.getString("Left"));
-		            		               
+		                nt.setJailLeft(rs.getString("Left"));               
 		                
 		                jailInf.add(nt);
 		                

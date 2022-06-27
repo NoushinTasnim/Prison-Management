@@ -46,11 +46,11 @@ public class AddNewJailor {
 	            } 
 				
 				String query = 		"insert into jailor (id, Name, Dob, Joined )"
-						+ 	"values(?,?,?,?)" ;
+									+ 	"values(?,?,?,?)" ;
 		
 				PreparedStatement pst = con.prepareStatement(query);
 		
-				DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+				DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		        Calendar cal = Calendar.getInstance();
 		        java.util.Date date = cal.getTime();
 		        String todaysdate = dateFormat.format(date);
@@ -81,13 +81,12 @@ public class AddNewJailor {
 	public void prevJailorLeft()
 	{
 		try {
-			
 				Connection conn = SqliteConnection.ConnectDb();
 			 
 			 	ResultSet rs = conn.createStatement().executeQuery("SELECT id, Left FROM jailor WHERE Left IS NULL");
 	     	    
 			 	while (rs.next()) {
-			 		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+			 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 			        Calendar cal = Calendar.getInstance();
 			        java.util.Date date = cal.getTime();
 			        String todaysdate = dateFormat.format(date);
