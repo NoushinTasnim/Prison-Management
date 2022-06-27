@@ -42,6 +42,10 @@ public class SignIn {
 		{
 			m.changeScene("Prisoner.fxml");
 		}
+		else if(chk == "3")
+		{
+			m.changeScene("Jailor.fxml");
+		}
 		else
 		{
 			wrongPass.setText(chk);

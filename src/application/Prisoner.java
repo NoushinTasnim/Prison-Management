@@ -62,6 +62,13 @@ public class Prisoner extends SignIn{
 		m.changeScene("NewPrisoner.fxml");	
 	}
 	
+	public void paroleBtn(ActionEvent event) throws IOException{
+		
+		Main main = new Main();
+		
+		main.changeScene("Parole.fxml");
+	}
+	
 	public void userSignOut(ActionEvent event) throws IOException{
 		
 		Main main = new Main();

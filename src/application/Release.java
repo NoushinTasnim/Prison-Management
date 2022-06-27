@@ -5,11 +5,14 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import model.PrisonerInfos;
 import model.ReleasePrisoner;
 import model.SqliteConnection;
 
@@ -50,6 +53,19 @@ public class Release {
 	
 	boolean flag = false;
 	
+	public void relText(PrisonerInfos priInf) throws Exception{
+		
+		relName.setText(priInf.getNameProp());
+		relDob.setText(priInf.getDobProp());
+		relGen.setText(priInf.getGenProp());
+		relHgt.setText(priInf.getHgtProp());
+		relCell.setText(priInf.getCellProp());
+		relCrm.setText(priInf.getCrmProp());
+		relEnt.setText(priInf.getEntProp());
+		relRel.setText(priInf.getRelProp());
+		relBG.setText(priInf.getBgProp());
+	}	
+	
 	public void checkRelease(ActionEvent event) throws Exception{
 		
 		relName.setText(("-----"));
@@ -62,43 +78,14 @@ public class Release {
 		relRel.setText(("-----"));
 		relBG.setText(("-----"));
 		
-		try {            
-			Connection con = SqliteConnection.ConnectDb();
-			ResultSet rs = con.createStatement().executeQuery("SELECT id,name,dob,gender,height,bloodGrp,cell,crime,entry,rel FROM prisoners");
-     	    
-            	while (rs.next()) {
-            		
-            		if(rs.getString("id").equals(releasePrisonerID.getText()) )
-	            	{
-            			flag = true;
-            			
-	            		relName.setText(rs.getString("name"));
-	            		relDob.setText(rs.getString("dob"));
-	            		relGen.setText(rs.getString("gender"));
-	            		relHgt.setText(rs.getString("height"));
-	            		relCell.setText(rs.getString("cell"));
-	            		relCrm.setText(rs.getString("crime"));
-	            		relEnt.setText(rs.getString("entry"));
-	            		relRel.setText(rs.getString("rel"));
-	            		relBG.setText(rs.getString("bloodGrp"));
-		                
-		                break;
-	            	}
-            		flag = false;
-	            } 
-
-            	con.close();
-        } catch (SQLException e) {
-        	e.printStackTrace();
-			System.out.println("Error loading table!!!");
-        }
+		relText( ReleasePrisoner.relChk(releasePrisonerID.getText()));
 	}
 	
 	public void releaseBtn(ActionEvent event) throws Exception{
 		
 		System.out.println("here");
 		
-		if(flag==true)
+		if(ReleasePrisoner.relCk(releasePrisonerID.getText())==true)
 		{
 			ReleasePrisoner.releaseChecker(releasePrisonerID.getText());
 			System.out.println("checked");

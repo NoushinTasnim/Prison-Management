@@ -100,8 +100,6 @@ public class NewPrisoner extends Prisoner implements Initializable{
 		{	
 			obj.updateTable();
 			
-			id_no ++ ;
-			
 			Main m = new Main();
 			
 			m.changeScene("Prisoner.fxml");
