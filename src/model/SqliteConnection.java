@@ -25,31 +25,4 @@ public class SqliteConnection {
 			return null;
 		}
 	}
-	
-	public static ResultSet dbExecute(String sqlQuery) throws ClassNotFoundException, SQLException{
-		
-		Statement st = null;
-		ResultSet rs = null;
-		//CachedRowSetImpl crs = null;
-		
-		
-		try {
-			ConnectDb();
-			st = con.createStatement();
-			st.executeQuery(sqlQuery);
-		}
-		catch(SQLException e)
-		{
-			System.out.println("problems occured at dbExecuteQuery operation"+e);
-			throw e;
-			
-		}
-		finally {
-			if(st != null) {
-				st.close();
-			}
-		}
-		return rs;
-	}
-
 }

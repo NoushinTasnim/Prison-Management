@@ -24,6 +24,10 @@ public class SignInModel {
 		{
 			return "2";
 		}
+		else if(user.equals("admin") && pass.equals("jailor")) 
+		{
+			return "3";
+		}
 		return "Wrong credentials";
 	}
 }

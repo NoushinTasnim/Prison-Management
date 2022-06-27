@@ -76,7 +76,7 @@ public class AddNewPrisoner {
 	            	idFromDb = rs.getInt("id");
 	            } 
 				
-				DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+				DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		        Calendar cal = Calendar.getInstance();
 		        java.util.Date date = cal.getTime();
 		        String todaysdate = dateFormat.format(date);
