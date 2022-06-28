@@ -31,7 +31,7 @@
                   <Font name="Bookman Old Style Bold" size="48.0" />
                </font>
             </Label>
-            <Button layoutX="35.0" layoutY="556.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="150.0" style="-fx-background-radius: 100; -fx-border-color: #ffffff; -fx-border-radius: 100; -fx-border-width: 3; -fx-background-color: #2b3043;" text="Parole" textFill="WHITE">
+            <Button layoutX="35.0" layoutY="556.0" mnemonicParsing="false" onAction="#paroleBtn" prefHeight="60.0" prefWidth="150.0" style="-fx-background-radius: 100; -fx-border-color: #ffffff; -fx-border-radius: 100; -fx-border-width: 3; -fx-background-color: #2b3043;" text="Parole" textFill="WHITE">
                <font>
                   <Font name="Bookman Old Style Bold" size="24.0" />
                </font></Button>
